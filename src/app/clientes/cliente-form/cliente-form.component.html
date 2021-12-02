@@ -1,0 +1,41 @@
+<h1 class="mt-4">Cadastro</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">{{cliente.id ? 'Edição' : 'Cadastro'}}</li>
+</ol>
+<div class="container">
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="alert alert-success d-flex align-items-center" role="alert" *ngIf="success == true">
+        Cliente cadastrado com sucesso    
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Cpf</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m2">
+                <button type="submit" class="btn btn-success" *ngIf="!cliente.id">
+                    <i class="fa fa-save"></i> Salvar
+                </button>
+                <button type="submit" class="btn btn-primary" *ngIf="cliente.id">
+                    <i class="fa fa-save"></i> atualizar
+                </button>
+                <button type="submit" class="btn btn-primary ml-3" (click)= "clienteListagem()">
+                    Voltar
+               </button>
+            </div>
+            
+        </div>
+    </form>
+</div>

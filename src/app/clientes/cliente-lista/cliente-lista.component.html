@@ -1,0 +1,45 @@
+<h1 class="mt-4">Consulta</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta</li>
+</ol>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-success" (click)="NovoCadastro()">
+                <i class="fa fa-plus"></i> Novo
+            </button>
+            
+        </div>
+        
+    </div>
+</div>
+<br /> 
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Cpf</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let clienteNg of cliente">
+                        <td>{{clienteNg.id}}</td>
+                        <td>{{clienteNg.nome}}</td>
+                        <td>{{clienteNg.cpf}}</td>
+                        <td>
+                            <button class="btn btn-primary" [routerLink]="['/cliente-form', clienteNg.id]"
+                            routerLinkActive="router-link-active">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button class="btn btn-danger" (click)="deletarCliente(clienteNg.id)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
