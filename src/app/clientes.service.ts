@@ -27,7 +27,7 @@ export class ClientesService {
    }
   
    getClientes() : Observable<Cliente[]> {
-     return this.http.get<Cliente[]>('http://localhost:8080/clientes/');
+     return this.http.get<Cliente[]>('https://angularherokuservice2.herokuapp.com/cliente/');
    }
   
    getClienteById(id: number) : Observable<Cliente>{
