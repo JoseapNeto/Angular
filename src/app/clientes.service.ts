@@ -19,7 +19,7 @@ export class ClientesService {
 
   //Observable(espera um retorno da api)         
    salvar(cliente : Cliente) : Observable<Cliente>{
-    return this.http.post<Cliente>('http://localhost:8080/clientes/', cliente);
+    return this.http.post<Cliente>('https://angularherokuservice2.herokuapp.com/cliente/', cliente);
    }
 
    editar(cliente : Cliente) : Observable<any>{
