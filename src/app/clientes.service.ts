@@ -35,6 +35,6 @@ export class ClientesService {
    }
 
    deletar(id : number) : Observable<any>{
-     return this.http.delete<any>(`http://localhost:8080/clientes/${id}`)
+     return this.http.delete<any>(`https://angularherokuservice2.herokuapp.com/cliente/${id}`)
    }
 }
