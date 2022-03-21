@@ -19,22 +19,22 @@ export class ClientesService {
 //
   //Observable(espera um retorno da api)         
    salvar(cliente : Cliente) : Observable<Cliente>{
-    return this.http.post<Cliente>('https://angularherokuservice2.herokuapp.com/cliente/', cliente);
+    return this.http.post<Cliente>('https://angularherokuservice.herokuapp.com/cliente/', cliente);
    }
 
    editar(cliente : Cliente) : Observable<any>{
-    return this.http.put<Cliente>(`https://angularherokuservice2.herokuapp.com/clientes/${cliente.id}`, cliente);
+    return this.http.put<Cliente>(`https://angularherokuservice.herokuapp.com/clientes/${cliente.id}`, cliente);
    }
   
    getClientes() : Observable<Cliente[]> {
-     return this.http.get<Cliente[]>('https://angularherokuservice2.herokuapp.com/cliente/');
+     return this.http.get<Cliente[]>('https://angularherokuservice.herokuapp.com/cliente/');
    }
   
    getClienteById(id: number) : Observable<Cliente>{
-    return this.http.get<Cliente>(`https://angularherokuservice2.herokuapp.com/clientes/${id}`)
+    return this.http.get<Cliente>(`https://angularherokuservice.herokuapp.com/clientes/${id}`)
    }
 
    deletar(id : number) : Observable<any>{
-     return this.http.delete<any>(`https://angularherokuservice2.herokuapp.com/cliente/${id}`)
+     return this.http.delete<any>(`https://angularherokuservice.herokuapp.com/cliente/${id}`)
    }
 }
