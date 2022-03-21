@@ -19,7 +19,7 @@ export class ClientesService {
 //
   //Observable(espera um retorno da api)         
    salvar(cliente : Cliente) : Observable<Cliente>{
-    return this.http.post<Cliente>('https://angularherokuservice2.herokuapp.com/clientes/', cliente);
+    return this.http.post<Cliente>('https://angularherokuservice.herokuapp.com/clientes/', cliente);
    }
 
    editar(cliente : Cliente) : Observable<any>{
@@ -31,7 +31,7 @@ export class ClientesService {
    }
   
    getClienteById(id: number) : Observable<Cliente>{
-    return this.http.get<Cliente>(`https://angularherokuservice.herokuapp.com/clientess/${id}`)
+    return this.http.get<Cliente>(`https://angularherokuservice.herokuapp.com/clientes/${id}`)
    }
 
    deletar(id : number) : Observable<any>{
