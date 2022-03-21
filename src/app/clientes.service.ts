@@ -23,7 +23,7 @@ export class ClientesService {
    }
 
    editar(cliente : Cliente) : Observable<any>{
-    return this.http.put<Cliente>(`http://localhost:8080/clientes/${cliente.id}`, cliente);
+    return this.http.put<Cliente>(`https://angularherokuservice2.herokuapp.com/clientes/${cliente.id}`, cliente);
    }
   
    getClientes() : Observable<Cliente[]> {
@@ -31,7 +31,7 @@ export class ClientesService {
    }
   
    getClienteById(id: number) : Observable<Cliente>{
-    return this.http.get<Cliente>(`http://localhost:8080/clientes/${id}`)
+    return this.http.get<Cliente>(`https://angularherokuservice2.herokuapp.com/clientes/${id}`)
    }
 
    deletar(id : number) : Observable<any>{
